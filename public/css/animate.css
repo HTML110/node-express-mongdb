@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* 增加艺术字体 */
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+	color: #BEBEBE;
+}
+
+
+
+
+#header main{
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: top;
+	animation-name: top;
+} 
+
+/* .animated.infinite,.top.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite
+} */
+
+/* .animated.hinge ,.top.hinge{
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s
+}
+ */
+/* .animated.bounceIn,.animated.bounceOut,.animated.flipOutX,.animated.flipOutY {
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s
+} */
+
+
+@-webkit-keyframes top {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+
+	30% {
+		-webkit-transform: scale3d(1.25,.75,1);
+		transform: scale3d(1.25,.75,1)
+	}
+
+	40% {
+		-webkit-transform: scale3d(.75,1.25,1);
+		transform: scale3d(.75,1.25,1)
+	}
+
+	50% {
+		-webkit-transform: scale3d(1.15,.85,1);
+		transform: scale3d(1.15,.85,1)
+	}
+
+	65% {
+		-webkit-transform: scale3d(.95,1.05,1);
+		transform: scale3d(.95,1.05,1)
+	}
+
+	75% {
+		-webkit-transform: scale3d(1.05,.95,1);
+		transform: scale3d(1.05,.95,1)
+	}
+
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+
+@keyframes top_name {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+
+	30% {
+		-webkit-transform: scale3d(1.25,.75,1);
+		transform: scale3d(1.25,.75,1)
+	}
+
+	40% {
+		-webkit-transform: scale3d(.75,1.25,1);
+		transform: scale3d(.75,1.25,1)
+	}
+
+	50% {
+		-webkit-transform: scale3d(1.15,.85,1);
+		transform: scale3d(1.15,.85,1)
+	}
+
+	65% {
+		-webkit-transform: scale3d(.95,1.05,1);
+		transform: scale3d(.95,1.05,1)
+	}
+
+	75% {
+		-webkit-transform: scale3d(1.05,.95,1);
+		transform: scale3d(1.05,.95,1)
+	}
+
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+
+
+ #header .top footer p:nth-child(2){
+	 height:50px ;
+	 line-height:50px;
+	 float:right;
+	 color:#99CC33;
+	 border-radius:10px 10px;
+	 font-size:19px;
+	 padding:0 5px 0 5px;
+	 box-shadow:0px 4px 2px #999999;
+	 font-weight:solid;
+	 /* text-shadow:2px 2px 1px #336699; */
+	 position:relative;
+	 
+	 animation: myfirst 15s infinite;
+     -moz-animation: myfirst 15s infinite;	/* Firefox */ 
+     -webkit-animation: myfirst 15s infinite;	/* Safari 和 Chrome */
+     -o-animation: myfirst 15s infinite;	/* Opera */
+	
+ 
+ }
+ 
+ @keyframes myfirst{
+0%{ left:-0px; top:0px;}
+50% { left:-300px; top:0px;}
+100%   {left:-0px; top:0px;} 
+}
+@-mo-keyframes myfirst{
+0%{ left:-0px; top:0px;}
+50% { left:-300px; top:0px;}
+100%   {left:-0px; top:0px;} 
+	
+}
+@-webkit-keyframes myfirst{
+0%{ left:-0px; top:0px;}
+50% { left:-300px; top:0px;}
+100%   {left:-0px; top:0px;} 
+}
+@-o-keyframes myfirst{
+0%{ left:-0px; top:0px;}
+50% { left:-300px; top:0px;}
+100%   {left:-0px; top:0px;} 
+	
+}
+/* 旋转点 */
+@keyframes spin{
+    0%{
+        transform:rotateY(0deg)
+    }
+    100%{
+        transform:rotateY(360deg)
+    }
+}
+
+@-mo-keyframes spin{
+    0%{
+        transform:rotateY(0deg)
+    }
+    100%{
+        transform:rotateY(360deg)
+    }
+}
+
+@-webkit-keyframes spin{
+    0%{
+        transform:rotateY(0deg)
+    }
+    100%{
+        transform:rotateY(360deg)
+    }
+}
+
+@-o-keyframes spin{
+    0%{
+        transform:rotateY(0deg)
+    }
+    100%{
+        transform:rotateY(360deg)
+    }
+}
+
+
+

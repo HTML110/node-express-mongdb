@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	 <!-- <script type="text/javascript" src="./js/device.min.js"></script>  -->
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+	<link type="text/css" rel="stylesheet" href="./css/public_computer.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/message.css"  /> 
+	<link type="text/css" rel="stylesheet" href="./css/animate.css"  />
+	<link type="text/css" rel="stylesheet" href="./css/public_phone.css"  media="(max-width:785.999px)" />
+	<link type="text/css" rel="stylesheet" href="./css/phone.css" media="(max-width:785.999px)" />
+	
+</head>
+<body>
+
+<header id="header">
+   <div class="top">
+     <main>
+       <% include header.ejs %>
+   </div>
+</header>
+<!-- 
+<div style="height:150px;width:1200px;margin:0 auto;">
+ <img src="./img/tt.jpg" alt="我的图片" style="width:1200px;height:150px"/>
+</div> -->
+<script type="text/javascript">
+	
+   $(document).ready(function(){
+
+		  if($(document).width()>786){	
+		   $("#main .main_left").css('width','895px');
+		 
+		  $(".extry").css('display','block');
+		  
+		  }else{
+		    $("#extry").css('display','none');
+		  }
+    });
+	
+ 
+</script> 
+
+
+
+<!-- 内容部分 -->
+<div id="main">
+<!--   <div class="main_top"> </div> -->
+  <div class="main_left">
+    <div class="content">
+	  <p class="table">
+		-------我可能是你生命中的过客，之所以是过客，因为你未曾为我停留！！！ 
+	  </p> 
+	
+	  <div class="message_me">
+	   <span>留言板！！！  </span>
+	  </div>
+	  <div class="prompt">
+	  <span>提示！！！</span>
+	     <p>发表留言 (您的留言将会在审核通过后显示，请勿重复提交)</p>
+	  </div>
+	
+	 <div class="talk">
+	 	<!-- 多说评论框 start -->
+			<div class="ds-thread" data-thread-key="" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+		var duoshuoQuery = {short_name:"sqk"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+			</script>
+		<!-- 多说公共JS代码 end -->
+		
+		
+		<!-- 外边加载 -->
+	<!-- 	<div class="extry" id="extry"style="">
+		 <div class="message_talk">
+	     <div class="message_talk_left">
+		   <img src="./img/000.jpg" alt="留言者"/>
+		   <p><a href="javascript:;">留言者姓名</a></p>
+		 </div> -->
+	   
+		 <!-- 回复内容 -->
+		<!--  <div class="reply" id="reply">
+		    <p class="reply_top"> 博主回复:</p>
+			<p class="reply_next">亲爱的网友你好，本人至今单身，如有需要请加入qq:3095211279,<br>谢谢！！！！</p>
+		 
+		 </div>
+		 
+		 <div style="height:10px;"></div> -->
+	  <!-- </div> -->
+
+	  
+	  
+	  
+	  
+	 <!--   <div class="message_talk">
+	     <div class="message_talk_left">
+		   <img src="./img/000.jpg" alt="留言者"/>
+		   <p><a href="javascript:;">留言者姓名</a></p>
+		 </div>
+	     <div class="message_talk_right">
+		    <p class="talk_right_top"> 
+			  你好博主！！我是来自南阳理工学院化学系的谭倩同学，
+			    我能和你交个朋友吗？请问此时此刻你是单身吗？希望我们能成为最好的朋友！！
+			</p>
+			<p class="talk_right_bottom">
+			  <span class="talk_right_span"><span class="iconfont alib" style="font-size:14px;">&#xe608;&nbsp;</span>2016-12-03 &nbsp;13-13-13</span>
+			  <span class="talk_right_span"><span class="iconfont alib" style="font-size:16px;">&#xe615;&nbsp;</span><a href="javascript:;">回复</a></span>
+			</p>
+		 </div>
+	  </div>
+	   -->
+	<!--    <div class="message_talk" id="message_talk">
+	     <div class="message_talk_left">
+		   <img src="./img/000.jpg" alt="留言者"/>
+		   <p><a href="javascript:;">留言者姓名</a></p>
+		 </div>
+	     <div class="message_talk_right" id="message_talk_right">
+		    <p class="talk_right_top"> 
+			  你好博主！！我是来自南阳理工学院化学系的谭倩同学，
+			    我能和你交个朋友吗？请问此时此刻你是单身吗？希望我们能成为最好的朋友！！
+			</p>
+			<p class="talk_right_bottom">
+			  <span class="talk_right_span"><span class="iconfont alib" style="font-size:14px;">&#xe608;</span>2016-12-03 &nbsp;13-13-13</span>
+			  <span class="talk_right_span" onclick="creatediv();"><span class="iconfont alib" style="font-size:16px;">&#xe615;</span><a href="javascript:;">回复</a></span>
+			</p>
+		 </div>
+		 
+		 
+		 <div style="height:2px;clear:both;"></div>
+	  </div> -->
+<!--      <div class="message_talk">
+	     <div class="message_talk_left">
+		   <img src="./img/000.jpg" alt="留言者"/>
+		   <p><a href="javascript:;">留言者姓名</a></p>
+		 </div>
+	     <div class="message_talk_right">
+		    <p class="talk_right_top"> 
+			  你好博主！！我是来自南阳理工学院化学系的谭倩同学，
+			    我能和你交个朋友吗？请问此时此刻你是单身吗？希望我们能成为最好的朋友！！
+			</p>
+			<p class="talk_right_bottom">
+			  <span class="talk_right_span"><span class="iconfont alib" style="font-size:14px;">&#xe608;&nbsp;</span>2016-12-03 &nbsp;13-13-13</span>
+			  <span class="talk_right_span"><span class="iconfont alib" style="font-size:16px;">&#xe615;&nbsp;</span><a href="javascript:;">回复</a></span>
+			</p>
+		 </div>
+	  </div> -->
+	 
+<!-- 	  <div class="message_page">
+	      <ul>
+		    <li><a href="javascript:;"><span>上一页</span></a></li>
+		    <li><a href="javascript:;"><span>下一页</span></a></li>
+		    <li><a href="javascript:;"><span>首页</span></a></li>
+		    <li><a href="javascript:;"><span>2</span></a></li>
+		    <li><a href="javascript:;"><span>3</span></a></li>
+		    <li><a href="javascript:;"><span>~</span></a></li>
+		    <li><a href="javascript:;"><span>尾页</span></a></li>
+		  </ul>
+	  
+	  
+	  </div> -->
+	  
+	  <!-- 留言板写内容 -->
+	<!--   
+      <div class="message_write" id="message_write">
+	     <form action="" method="">
+		   <textarea></textarea>
+		    <span class="message_tubiao">更多图标<span class="iconfont">&#xe618;</span></span>
+			 <input type="submit" value="发留言"></input>
+		 
+		 </form>
+	  </div>
+	 
+	 </div> -->
+	 <!-- 结束 -->
+	 
+	 
+	 
+	 
+	 </div>
+	</div>
+  </div>
+  
+  
+  <!-- 右边内容 -->
+  <div class="main_right">
+    
+	<% include left.ejs %>
+	<script type="text/javascript">
+	
+     $(".main_tab"+":not(:first)").hide();
+     $(".table_c span").mouseenter(function(){ 
+        num=$(this).attr("id");
+	   $(".main_tab").each(function(index){
+	   if(index==num){
+	        $(this).show();
+		    $(this).siblings().hide(); 
+		  } 
+	   })
+    });   
+	</script>
+	<div class="me_love">
+	   <p class="me_life">My life</p>
+	   <img src="./img/sun.jpg" alt="我的朋友" />
+	</div> 
+  </div>
+</div>
+
+ <div style="height:20px;clear:both;"></div>
+<footer id="footer">
+   <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+</footer>
+
+
+
+
+<!-- 返回顶层 -->
+<div id="back-top">
+<a href=""><span><img src="./img/41.jpg" alt="top"/></span>返回到顶部</a>
+</div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+
+  $('#back-top').hide(); 
+   
+   $(function(){
+       $(window).scroll(function(){
+        if($(window).width()>768){
+	      if($(this).scrollTop()>100){
+		  $("#back-top").fadeIn(); 
+		  }else{ 
+		   $("#back-top").hide();
+		  }
+		  }else{
+		       $("#back-top").hide();
+		  }
+	   })
+   });
+   
+   $("back-top a").click(function(){
+     $("html,body").animate({scrollTop:0},800);
+	
+	  
+   });
+   
+ <!-- alert( $('#contenter').offset().top);   -->
+  <!-- alert( $('#contenter').offset().left);  -->
+ 
+
+  $('#contenter').click(function(){
+       $('html,body').animate({scrollTop:0}, 800);});
+});
+
+
+
+</script>
+
+</body>
+</html>

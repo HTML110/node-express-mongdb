@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!-- <script type="text/javascript" src="./js/device.min.js"></script> -->
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+	<link type="text/css" rel="stylesheet" href="./css/public_computer.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/index.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/animate.css"  />
+	<link type="text/css" rel="stylesheet" href="./css/public_phone.css"  media="(max-width:785.999px)" />
+	<link type="text/css" rel="stylesheet" href="./css/phone.css" media="(max-width:785.999px)" />
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+	 <!--    if(device.mobile()){} -->
+   $(document).ready(function(){
+/*       var leng=$(".main_left .left_o .phone_get").text();
+	     var sun=leng.substring(0,73)+'······';
+	     var computer=leng.substring(0,188)+'······'; */
+     
+         var p_length=$(".main_left .left_o .phone_get").length;
+		$(".main_left .left_o .phone_get").each(function(){    
+		
+		 var leng=$(this).text();
+	     var sun=leng.substring(0,73)+'······';
+	     var computer=leng.substring(0,188)+'······';
+		  if($(document).width()>786){
+		     $(this).text(computer);
+		  }else{
+		     $(this).text(sun);
+		     $(".phone_span").css('display','block');
+	         $(".iconfont").css('display','none');
+		  
+		  }
+		
+		
+		
+		});
+	
+     });
+</script> 
+
+<header id="header">
+   <div class="top">
+      <% include header.ejs%>
+   </div>
+</header>
+<div id="main"> 
+<!--   <div class="main_top"> </div> -->
+  <div class="main_left">
+
+
+  <%
+      for(var i=0;i<result.length;i++){ 
+           if(result[i].alltype=="IT成长"){
+
+    %>
+    <div class="left_tab one" style="margin-top:10px;">
+        <span id="ht" class="ht"><i><%= result[i].title %><i></span>
+        <p class=""></p>
+        <table>
+         <tr height="30" valign="middle">
+            <td class="phone_none"><span class="iconfont">&#xe630;</span><span>作者:</span><a href="./me.html"><%= result[i].author%></a></td>
+            <td><span class="iconfont">&#xe613;</span><span>分类:</span><a href="javascript:;"><%=result[i].alltype %></a></td>
+            <td><span class="iconfont">&#xe690;</span><span>浏览:</span><a href="javascript:;"><%=result[i].looker %></a></td>
+            <td><span class="iconfont">&#x3438;</span><span>评论:</span><a href="/message?type=留言板"><%= result[i].speaker %></a></td>
+         </tr> 
+        </table>
+        
+        <p class="left_o" id="left_o" >   
+            <span style="display:none;" class="phone_span">
+            <img src="./img/<%=result[i].tupian.tupian.name %>" alt="图片" />
+            </span>     
+            <span class="phone_get">
+               <%= result[i].describe%>
+            </span>
+        
+        </p>
+        <p><a href="/text?title=<%= result[i].title %>"><span class="left_t">阅读全文</span></p></a>
+    
+    </div>
+     <% }} %>
+
+
+
+	<div style="height:15px;"></div>
+    <hr>
+	<!-- 分页代码 -->
+	<div class="top_page">
+	   <table>
+	     <tr height="20" id="page_a">
+		 <!--   <td><a href="javascript:;"><span>首页</span></a></td>
+		   <td class="table_s"><a href="javascript:;"><span>上一页</span></a></td>
+		   <td class="table_s"><a href="javascript:;"><span>下一页</span></a></td> -->
+		  <!--  <td><a href="javascript:;"><span>1</span></a></td>
+		   <td><a href="javascript:;"><span>2</span></a></td>
+		   <td><a href="javascript:;"><span>3</span></a></td> -->
+		<!--    <td><a href="javascript:;"><span>···</span></a></td>
+		   <td><a href="javascript:;"><span>尾页</span></a></td> -->
+		 </tr>
+	   </table>
+	</div>
+  <script type="text/javascript">
+          // var news=$("#arc_title").html();
+    
+          //   $.ajax({
+          //     "url":"/typearticle?type="+news,
+          //     "type":"get",
+          //     "success":function (result){
+          //         var sum=parseInt(result.length);
+          //         var pagenum=Math.ceil(sum/6);
+          //         for(var i=0;i<pagenum;i++){
+          //               $("#page_a").append(" <td><a href='javascript:;'><span>"+i+"</span></a></td>");
+
+          //         }
+
+          //         $("#page_a td").click(function(){
+          //         	var page=$(this).index();
+          //         	getpage(page);
+
+          //         })
+
+          //     }});
+
+
+  </script>
+
+
+
+	<hr>
+  </div>
+  <div class="main_right">
+    
+  <% include left.ejs %>
+
+<!-- 	<div class="main_right_bottom">
+	    <table>
+		  <tr height="20" id="com">
+		    <td class="table_c"><span class="txuan t_one" id="0">最新文章</span></td>
+		    <td class="table_c"><span class="" id="1">文章推荐</span></td>
+		    <td class="table_c"><span class="" id="2">代码技巧</span></td>
+		  </tr>
+		</table>
+		<div class="page">
+			<div class="main_tab one">
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/01.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/01.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			  
+			  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/01.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  
+			  </div>
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/01.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			</div>
+			<div class="main_tab">
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/14.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  
+			  </div>
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/14.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/14.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/14.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>  
+			  
+			</div>
+			<div class="main_tab">
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/tt.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  
+			  </div>
+			  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/tt.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  
+			  </div>
+			  
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/tt.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			  
+			   <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/tt.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  </div>
+			  
+			</div>
+	    </div>
+	</div> 
+ -->
+
+
+	<script type="text/javascript">
+	
+     $(".main_tab"+":not(:first)").hide();
+     $(".table_c span").mouseenter(function(){ 
+        num=$(this).attr("id");
+	   $(".main_tab").each(function(index){
+	   if(index==num){
+	        $(this).show();
+		    $(this).siblings().hide(); 
+		  } 
+	   })
+    });   
+	</script>
+	
+	
+  </div>
+</div>
+
+ <div style="height:20px;clear:both;"></div>
+<footer id="footer">
+   <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+</footer>
+
+
+
+
+<!-- 返回顶层 -->
+<div id="back-top">
+<a href=""><span><img src="./img/41.jpg" alt="top"/></span>返回到顶部</a>
+</div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+
+  $('#back-top').hide(); 
+   
+   $(function(){
+       $(window).scroll(function(){
+        if($(window).width()>768){
+	      if($(this).scrollTop()>100){
+		  $("#back-top").fadeIn(); 
+		  }else{ 
+		   $("#back-top").hide();
+		  }
+		  }else{
+		       $("#back-top").hide();
+			     $(".phone_span").css('display','block');
+			   
+		  }
+		  
+		  
+	   })
+   });
+   
+   $("back-top a").click(function(){
+     $("html,body").animate({scrollTop:0},800);
+	
+	  
+   });
+   
+ <!-- alert( $('#contenter').offset().top);   -->
+  <!-- alert( $('#contenter').offset().left);  -->
+ 
+
+  $('#contenter').click(function(){
+       $('html,body').animate({scrollTop:0}, 800);});
+});
+
+
+
+</script>
+
+</body>
+</html>

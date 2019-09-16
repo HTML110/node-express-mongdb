@@ -1,0 +1,580 @@
+/* 左边内容 */
+#main .main_left{
+   min-height:150px; 
+  /* height:800px; */
+   /* width:895px;     */
+   border-left:1px solid  #d0d0d0;
+   float:left;
+  /* border:1px solid red; */
+   box-shadow:2px 0px 3px #EBEBEB; 
+}
+#main .main_left .content .table {
+	width:100%;
+	min-height:50px;
+	line-height:50px;
+	text-align:right;
+	font-size:1.4em;
+	text-shadow:3px 3px 5px  	#9D9D9D	;
+	/* background-color:#87CEFA;	 */
+	background-color: 	#ECF5FF; 
+    margin-bottom:10px;	
+}
+
+.message_me{
+	min-height:30px;
+	width:100%;
+
+	 
+	
+}
+.message_me span{
+	display:block;
+	height:28px;
+	width:150px;
+	text-align:center;
+	line-height:30px;
+	font-size:20px;
+
+    background-color: #A6A6D2;
+	border-radius:3px;
+	box-shadow:1px 1px 1px gray;
+	transition: all 2s; 
+    -webkit-transition: all 2s; 
+    -moz-transition: all 2s; 
+    -o-transition: all 2s;
+	
+}
+.message_me span:hover{
+	padding-left:160px;
+}
+
+#main .main_left .content .prompt{
+	min-height:50px;
+	width:100%;
+	/* border:1px solid red; */
+	
+}
+#main .main_left .content .prompt span{
+margin-left:40px;
+ display:block;
+	height:28px;
+	width:150px;
+	margin-top:5px;
+	text-align:center;
+	line-height:30px;
+	font-size:20px;
+
+	background-color: #A6A6D2;
+	border-radius:3px;
+    box-shadow:1px 1px 1px gray;
+	transition: all 2s; 
+    -webkit-transition: all 2s; 
+    -moz-transition: all 2s; 
+    -o-transition: all 2s;
+ 
+	
+}
+#main .main_left .content .prompt span:hover{
+	
+	padding-left:160px;
+	
+}
+#main .main_left .content .prompt p{
+	min-height:30px;
+	font-size:17px;
+	line-height:30px;
+	font-family:'宋体';
+	font-weight:bold;
+	color: 	#8B7D7B;
+	text-shadow:1px 1px 1px  #8B2500;
+	transition: all 2s; 
+    -webkit-transition: all 2s; 
+    -moz-transition: all 2s; 
+    -o-transition: all 2s; 
+}
+
+#main .main_left .content .prompt p:hover{
+	padding-left:150px;
+	
+}
+
+#main .main_left .content .talk{
+	min-height:30px;
+	min-width:100px;
+}
+
+/* 开始 */
+.message_talk{
+	/* border:1px solid red; */
+	min-height:140px;
+	/* min-width:945px; */
+	 
+	margin-top:20px;
+   box-shadow:1px 1px 1px gray;
+   /* border:1px solid blue;  */
+}
+.message_talk .message_talk_left{
+	height:128px;
+	width:110px;
+	 /* border:1px solid red;  */
+	float:left;
+	position:relative;
+
+}
+.message_talk .message_talk_left img{
+	height:90px;
+	width:90px;
+	margin-top:10px;
+	margin-left:10px;
+
+
+}
+.message_talk .message_talk_left p{
+     height:22px;
+	 width:110px;
+	 line-height:22px;
+	 text-align:center;
+	 font-size:16px;
+	 clear:both;
+	  /* border:1px solid blue;  */
+}
+.message_talk .message_talk_right{
+	height:120px;
+	width:770px;
+	/* border:1px solid red;  */
+	border-bottom:1px dashed gray;
+	position:relative;
+	float:left;
+}
+.message_talk  .talk_right_top{
+	line-height:22px;
+	max-height:89px;
+	min-height:60px;
+	
+	letter-spacing:1px;
+	font-family:'宋体';
+	font-size:15px;
+	padding:2px;
+} 
+.message_talk  .talk_right_bottom{
+	line-height:30px;
+	letter-spacing:1px;
+	height:30px;
+	font-family:'宋体';
+	font-size:13px;
+	padding:2px;
+	position:absolute;
+	bottom:5px;
+   
+	} 
+.message_talk  .talk_right_bottom .talk_right_span{
+	margin-right:50px;
+}
+/* 回复内容 */
+
+.reply{
+	min-height:60px;
+	/* width:830px; */
+	min-width:630px;
+	border:1px dashed gray;
+	clear:both;
+	margin-bottom:15px;
+	margin-left:110px;
+	/* border:2px solid red; */
+	/* display:none; */
+	
+}
+#two{
+	min-height:60px;
+	width:830px;
+	border:1px dashed gray;
+	clear:both;
+	margin-bottom:15px;
+	margin-left:110px;
+	/* border:2px solid red; */
+	
+}
+#textopen{
+	height:90px;
+	width:800px;
+	font-size:15px;
+	font-family:'宋体';
+	/* resize: none;*/
+	background-color: 	#D1D1D1;
+}
+.reply_top{
+  width:90px;
+  text-align:center;
+  height:26px;
+  font-size:16px;
+  color:#EE6A50;
+  line-height:26px;
+	
+}
+#reply_top{
+  width:90px;
+  text-align:center;
+  height:26px;
+  font-size:16px;
+  color:#EE6A50;
+  line-height:26px;
+	
+}
+.reply_next{
+
+  margin-left:30px;
+  letter-spacing:1px ;
+  font-size:14px;
+  font-family:"宋体";
+  line-height:22px;
+	
+}
+#reply_next{
+
+margin-left:30px;
+   letter-spacing:1px ;
+  font-size:14px;
+  font-family:"宋体";
+  line-height:22px;
+	
+}
+
+
+.message_page{
+	height:90px;
+	/* width:945px; */
+	margin-top:20px;
+	border-bottom:1px solid gray;
+	border-top:1px dashed gray;
+}
+.message_page ul li:nth-child(1){
+margin-left:380px;
+}
+.message_page ul li {
+	float:left;
+	width:60px;
+	margin-top:25px;
+	/* border:1px solid blue; */
+	text-align:center;
+	height:28px;
+	line-height:28px;
+	 font-size:15px;
+	 cursor:pointer;
+	 margin-left:5px;
+	 box-shadow:1px 1px 1px gray;
+	 background-color:#C7C7C7;
+	
+}
+.message_page ul li:nth-child(3) {
+  margin-left:20px;
+	
+}
+
+
+
+.message_write{
+	height:140px;
+}
+.message_write textarea{
+width: 780px;
+height:130px;
+float:left;
+resize: none;	
+box-shadow:1px 1px 1px gray;
+}
+.message_write .message_tubiao{
+	width:90px;
+	height:26px;
+	line-height:26px;
+	text-align:center;
+	margin-top:43px;
+	background-color: #B0B0B0;
+	float:right;
+	font-size:16px;
+	cursor:pointer;
+	box-shadow:1px 1px 1px gray;
+	
+}
+
+.message_write .message_tubiao:hover{
+	box-shadow:3px 3px 3px gray;
+		background-color: 	#8C8C8C;
+	color:white;
+}
+.message_write input{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	width:90px;
+    margin-top:30px;
+	float:right;
+	color: 	#EEB422;
+	background-color: 	#CD6839;
+	box-shadow:1px 1px 1px #EE6A50;
+}
+
+
+/* 结束 */
+
+
+
+
+
+
+
+/* 右边内容 */
+#main .main_right{
+  min-height:500px;
+  width:280px;
+  float:right;
+  /* background-color:#EAEAEA; */
+}
+
+#main .main_right .main_me{
+
+	height:240px;
+	width:280px;
+	/* background-color:#EECFA1; */
+	/* background:url(../img/bgme.jpg) no-repeat; */
+	background-size:280px 280px;
+	box-shadow:2px 2px 3px #B2DFEE; 
+
+	
+}
+#main .main_right .main_me table{
+	margin:0 auto;
+}
+#main .main_right .main_me table a{
+	display:block;
+	height:30px;
+	/* background-color: 	#99CCFF 	; */
+	background-color: #D2E9FF	;
+	
+	box-shadow:2px 2px 2px #00BFFF;
+	border-radius:5px;
+	margin:5px;
+	text-shadow:2px 2px 2px #87CEFA;
+	width:80px;
+	
+	text-align:center;
+	line-height:30px;
+	
+    transition: all 1.5s ease 0s; 
+	-moz-transition: all 1.5s ease 0s;
+    -webkit-transition: all 1.5s ease 0s;
+    -o-transition: all 1.5s ease 0s;
+	position:relative;
+}
+
+#main .main_right .main_me table a:hover{
+	
+		transform: rotate(360deg);
+}
+
+
+
+#main .main_right .main_me .me a{
+	margin:0 auto;
+	height:140px;
+	display:block;
+	width:140px;
+	text-shadow:2px 2px 1px #CD853F;
+	font-weight:bold;
+	box-shadow:30px 15px 15px #EAEAEA;
+	overflow:hidden;
+	background:url(../img/logo.png) no-repeat;
+	background-size: 140px 140px; 
+	border-radius:70px;
+	/* border:1px solid #1E90FF; */
+}
+
+
+
+#main .main_right .main_me .me a span{
+	height:150px;
+	width:150px;
+	text-align:center;
+	color:white;
+	display:block;
+	/* border:1px solid black; */
+	box-shadow:-2px -2px 2px  	DodgerBlue;
+	/* background-color: 	#CCEEFF; */
+	background-color:#99CCFF;
+	margin-top:150px;
+    filter:alpha(opacity=70);  
+    -moz-opacity:0.7;  
+    -khtml-opacity: 0.7;  
+    opacity: 0.7;   
+	-webkit-transition: all .4s ease-in-out; 
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;  
+    transition: all .4s ease-in-out; 
+}
+#main .main_right .main_me .me a:hover span{
+	margin-top:70px;
+}
+#main .main_right .main_right_bottom{
+   min-height:100px;
+	width:280px;
+	box-shadow:2px 2px 3px #B2DFEE; 
+    /* background-color:#F7F7F7; */
+	padding-bottom:15px;
+	margin-bottom:5px;
+}
+
+#main .main_right .main_right_bottom table{
+	/* background-color:#EAEAEA; */
+	width:100%;
+	border-bottom:1px solid  #DCDCDC;
+
+}
+#main .main_right .main_right_bottom table span:nth-child(1){
+	padding-left:20px;
+	
+}
+#main .main_right .main_right_bottom table span{
+
+	display:block;
+	height:20px;
+	 padding:5px 10px 5px 10px; 
+	width:60px;
+	line-height:20px;
+	font-size:14px;
+	cursor:pointer;
+	box-shadow:1px 1px 1px #DCDCDC;
+
+}
+
+ #main .main_right .main_right_bottom table span:hover{
+	font-weight:bold;
+	color:white;
+	text-shadow:2px 2px 3px #808080;
+}
+ 
+
+
+#main .main_right .page{
+	
+   min-height:200px;
+  width:280px;
+  overflow:hidden; 
+  transform-style: preserve-3d;
+}
+
+
+
+#main .main_right .main_right_bottom .main_tab{
+	height:400px;
+	width:260px;
+	margin:0 auto;
+	transform-style: preserve-3d;
+	box-shadow:1px 1px 1px white;
+	animation:spin 1s linear 1;
+    -o-transition:spin 1s linear 1;
+	-mo-transition:spin 1s linear 1;
+	-webkit-transition:spin 1s linear 1;
+
+}	
+
+/* 
+#main .main_right .main_right_bottom .main_tab:hover{
+    animation:spin 1.2s linear 1;
+}  */
+
+#main .main_right .main_right_bottom .main_tab .tab_page{
+	height:100px;
+	width:250px;
+	margin-top:5px;
+	margin-left:5px;
+	box-shadow:1px 1px 1px #A9A9A9;
+   -webkit-transition: all 0.4s ease-in; 
+	-moz-transition: all 0.4s ease-in; 
+	-o-transition: all 0.4s ease-in; 
+	transition: all 0.4s ease-in;  
+
+}
+
+#main .main_right .main_right_bottom .main_tab .tab_page:hover{
+	padding-left:10px;
+	background-color:#DBDBDB;
+	
+}
+
+/* #main .main_right .main_right_bottom .main_tab .tab_page:nth-child(4){
+
+	height:130px;
+	
+}
+ */
+
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_img{
+	height:90px;
+	width:90px;	
+	float:left;
+	margin-left:5px;
+	margin-top:10px;
+
+	/* border:1px solid red; */
+}
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_img:hover img{
+	
+-moz-transform: scale(1.1); 
+-webkit-transform: scale(1.1); 
+-o-transform: scale(1.1);
+ -ms-transform: scale(1.1);
+}
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_img img{
+	height:80px;
+	width:80px;	
+    -webkit-transition: all 1s; 
+    -moz-transition: all 1s; 
+    -o-transition: all 1s;
+    transition: all 1s;
+
+}
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_new{
+	height:100px;
+	padding-top:5px;
+
+	width:150px;	
+	float:right;
+	/* border:1px solid blue; */
+}
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_new p{
+ font-size:13px;
+ color:#858585;
+ height:30px;
+ letter-spacing:1px;
+ line-height:15px;
+ overflow: hidden;
+ 
+}
+#main .main_right .main_right_bottom .main_tab .tab_page .tab_new .time{
+ font-size:14px;
+ color:#6B6B6B;
+}
+#main .main_right .me_love{
+	width:280px;
+	height:195px;
+	box-shadow:2px 2px 3px #B2DFEE; 
+	
+}
+#main .main_right .me_life{
+     height:33px;
+	 line-height:33px;
+	 color: #B8B8DC;
+	 width:100px;
+	 text-align:center;
+	 font-size:1.3em;
+	 background-color:#ACD6FF;
+	 border-radius:7px;
+	box-shadow:2px 2px 3px #d0d0d0; 
+	
+}
+#main .main_right .me_love img{
+	margin-top:8px;
+	width:280px;
+	height:150px;
+	
+	
+}

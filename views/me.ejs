@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	 <!-- <script type="text/javascript" src="./js/device.min.js"></script>  -->
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+	<link type="text/css" rel="stylesheet" href="./css/public_computer.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/me.css"  /> 
+	<link type="text/css" rel="stylesheet" href="./css/animate.css"  />
+	<link type="text/css" rel="stylesheet" href="./css/public_phone.css"  media="(max-width:785.999px)" />
+	<link type="text/css" rel="stylesheet" href="./css/phone.css" media="(max-width:785.999px)" />
+	
+</head>
+<body>
+
+<header id="header">
+   <div class="top">
+     <% include header.ejs %>
+   </div>
+</header>
+<!-- 
+<div style="height:150px;width:1200px;margin:0 auto;">
+ <img src="./img/tt.jpg" alt="我的图片" style="width:1200px;height:150px"/>
+</div> -->
+<script type="text/javascript">
+	
+   $(document).ready(function(){
+
+		  if($(document).width()>786){	
+		   $("#main .main_left").css('width','895px');
+		   $("#main .main_left .content .article .img .img_right").css('display','block');
+		   $("#main .main_left .content .article .img .img_left img").css('width','400px');
+		  
+		  
+		  }else{
+		  
+		     $("#main .main_left .content .article .img .img_right").css('display','none');
+		  }
+    });
+	
+ 
+</script> 
+
+
+
+<!-- 内容部分 -->
+<div id="main">
+<!--   <div class="main_top"> </div> -->
+  <div class="main_left">
+    <div class="content">
+	  <p class="new_title">舍我其谁！！！ </p>
+	  
+	  <p class="table">
+	    
+		-------如果你想得到，你就会得到，你所需要付出的只是行动！！！
+		
+	  </p> 
+	  <div class="article">
+	    <p>
+		
+		
+		对于已经面对大三的我此刻的心情是迷茫，但更多的是激动，迷茫是我不知何去何从，
+		激动的是我可以做我想做的，可以为走向社会做一些准备。这两句话的矛盾足可以彰显
+		出我内心的矛盾。从小学到初中再到高中,最后到大学！我无时无刻的都在想进入社会，
+		希望在社会混的出人头地，但我也明白，身上的光环需要自己的努力去争取！！！ 
+		</p> 
+	    <div class="img">
+		   <div class="img_left">
+		      <img src="./img/ren.jpg" alt="my" />
+		   </div>
+		   <div class="img_right">
+		   <span> 
+		     <h3 style="text-align:center;color:#CCCCCC;"> 一张人生规划</h3>
+		     <h3 style="text-align:center;color:#CCCCCC;"> 一句人生格言</h3>
+			 <!-- 潇洒人生六得：来得、做得、玩得、舍得、放得、走得。 -->
+		   </span>
+		    <p class="me_p">
+            人生是一趟旅行，只卖单程票，不卖回程票;时间就的生命，
+			人生何其短暂，请珍惜有限岁月，活出自己，活出生命。
+		    </p>
+		
+		   </div>
+		</div>
+	    <p>
+		自进入大学以来。我由在大一时满脑子的新奇，到脚踏实地学习，再到学的有一些成就的我，
+		中间我有经历过对自己所选就业方向的怀疑，那时候内心是非常的挣扎，以及对自己努力成果
+		的否定！！！几乎成了我挥之不去的人生阴影。但是事情总是往好的方向发展的，由对我人生
+		方向的否定,怀疑逐渐的转向我内心的肯定，也正是过程让我学到了很多宝贵的经验！！！ 
+		</p> 
+	    <p>
+	 	我相信此刻大三的我，拥有着不一般的自信，从刚开始学《HTML4》,《CSS2》完之后我就去仿
+		写淘宝，京东，小米的官方静态网站，那个时候感觉自己生不都不懂，就连截图我也是用qq截图，
+		给一张一张的截下来。但是就是凭着那一股不认输的劲，我依然坚持下来了，接下来，我学习
+		了《JavaScript》，《jQuery》，我学会了添加动画效果，为网站逐渐增加一些动态的效果。因
+		为我知道IT知识每天都可谓日新月异，如果你今天不学习新的知识，明天你就可能被这个社会给
+		淘汰。所以在大二上半学期我就开始学习《HTML5》,《CSS3》学习他们新加入的新知识，新技能。
+		同时在学习这个过程中我也逐步接触一些比较的新知识，如：响应式布局,《Bootstrap》框架,
+		和比较流行的《EasyUI》框架。由于我加入的网站求索网，需要写一个转型网站，此刻正是检验
+		我所学的成果。当我完成了这个成果时我的内心是非常的骄傲！！在大二下半学期我就开始学习
+		一些关于网站的其他知识如《HTTP》，《Ajax》，《JSON》《xml》等等。同时我也意识到在未来
+		手机浏览网页可能要占绝大部分市场份额，所以移动端网页显得尤为重要。所以我又选择了学习
+		《jquery mobile》制作手机网页。在大二即将结束的时候我们网站又接受了老师指派的一项任务，
+		制作《南阳理工学院官方网站》当看到这个任务的时候内心是十分激动的，因为这个对我来说可
+		是一个不小的工程，并不是说这个任务是有多难，而是说校网页它代表的是学校的颜面，因此我
+		们是非常重视的，但总的来说还是在修修改改的过程中给完成了。虽然经过暑假两个月的时间又
+		将所学的知识给沉淀一下发现校网页有很多还可以改进的地方，但内心还是有些小"嘚瑟"的，在
+		暑假的时候我又开始接触《php》用这个语言我写了一个留言板，使前后台相互数据，使网站从静
+		态彻底写成动态的，虽然php学的只是皮毛但依然挡不住我对它的喜爱，也就是在这个过程使我又
+		重新温习了《mysql》，和接触到《node.js》的强大，对于《node.js》我可谓是非常的痴心，对
+		于它的未来我也是非常的关注。
+		</p> 
+		<p>
+		  在此刻当我已经用node.js+mongodb写成一个博客的时候我的内心是十分的兴奋，虽说还有些瑕疵，不过我更认为
+		  一个得意的作品是对自己曾经努力的肯定，和对自己所学东西的一种认可！！！那么接下来我要钻研更加精深的nodejs
+		  和流行的angular.js框架！！！
+		</p>
+		<p>
+		  所以我未来的学习方向可以说是十分确定的了！！！ 
+		</p>
+	  </div>
+	  <div class="about_me">
+	   <span>About  me  </span>
+	   <table>
+	     <tr height="30">
+		    <td width='90'>(室内)运动:</td>
+		    <td width='40'>篮球</td>
+		    <td width='40'>台球</td>
+		    <td width="55">乒乓球</td>
+		    <td>羽毛球</td>
+		 </tr> 
+		 <tr height="30">
+		    <td width="90">(室外)运动:</td>
+		    <td>爬山</td>
+		    <td>旅游</td>
+		 </tr> 
+		  <tr height="30">
+		    <td width="80">(此刻)现居:</td>
+		    <td colspan="2">南阳</td>
+		 </tr>
+		
+		 <tr height="30">
+		    <td width="80">工作职业:</td>
+		    <td colspan="8">前段开发工程师，设计者</td>
+		 </tr>
+		  <tr height="30">
+		    <td width="80">(人生)梦想:</td>
+		    <td colspan="2">行动中....</td>
+		 </tr>
+	   </table>
+	 </div>
+
+	</div>
+  </div>
+  
+  
+  <!-- 右边内容 -->
+  <div class="main_right">
+    <% include left.ejs %>  
+	
+	<script type="text/javascript">
+	
+     $(".main_tab"+":not(:first)").hide();
+     $(".table_c span").mouseenter(function(){ 
+        num=$(this).attr("id");
+	   $(".main_tab").each(function(index){
+	   if(index==num){
+	        $(this).show();
+		    $(this).siblings().hide(); 
+		  } 
+	   })
+    });   
+	</script>
+	<div class="me_love">
+	   <p class="me_life">My life</p>
+	   <img src="./img/sun.jpg" alt="我的朋友" />
+	</div> 
+  </div>
+</div>
+
+ <div style="height:20px;clear:both;"></div>
+<footer id="footer">
+   <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+</footer>
+
+
+
+
+<!-- 返回顶层 -->
+<div id="back-top">
+<a href=""><span><img src="./img/41.jpg" alt="top"/></span>返回到顶部</a>
+</div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+
+  $('#back-top').hide(); 
+   
+   $(function(){
+       $(window).scroll(function(){
+        if($(window).width()>768){
+	      if($(this).scrollTop()>100){
+		  $("#back-top").fadeIn(); 
+		  }else{ 
+		   $("#back-top").hide();
+		  }
+		  }else{
+		       $("#back-top").hide();
+		  }
+	   })
+   });
+   
+   $("back-top a").click(function(){
+     $("html,body").animate({scrollTop:0},800);
+	
+	  
+   });
+   
+ <!-- alert( $('#contenter').offset().top);   -->
+  <!-- alert( $('#contenter').offset().left);  -->
+ 
+
+  $('#contenter').click(function(){
+       $('html,body').animate({scrollTop:0}, 800);});
+});
+
+
+
+</script>
+
+</body>
+</html>

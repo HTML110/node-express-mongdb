@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	 <!-- <script type="text/javascript" src="./js/device.min.js"></script>  -->
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+	<script src="/js/underscore-noflect.js"></script>
+	<link type="text/css" rel="stylesheet" href="./css/public_computer.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/text.css"  /> 
+	<link type="text/css" rel="stylesheet" href="./css/animate.css"  />
+	<link type="text/css" rel="stylesheet" href="./css/public_phone.css"  media="(max-width:785.999px)" />
+	<link type="text/css" rel="stylesheet" href="./css/phone.css" media="(max-width:785.999px)" />
+	
+</head>
+<body>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<header id="header">
+   <div class="top">
+     <main>
+       <p>孙全科的博客</p>
+       <p>青春将逝，你还在迷茫吗！！！！！ 
+	     <!-- 我是你生命中的过客，之所以是过客，因为你未曾为我停留！！！ -->
+	     <!-- 距离，产生的不是美，而是诠释了不堪一击的爱情。 -->
+	   </p>
+     </main> 
+	    <!-- 导航条开始 -->
+	 <nav>
+		<ul>
+		  <li><a href="/" alt="经典">博客首页</a></li>
+		  <li><a href="/life">生活点滴</a></li>
+		  <li><a href="/it">IT成长</a></li>
+		  <li><a href="/successful">经典之作</a></li>
+		  <li><a href="/conclusion">前端开发</a></li>
+		  <li><a href="/me" alt="经典" title="制作">关于我</a></li>
+		  <li><a href="/message" alt="经典" title="制作">留言板</a></li>
+		</ul>
+	 </nav>
+	 <footer>
+	    <p><span class="iconfont shouye-copy">&#xe603;</span><a href="./index.html">博客首页</a>>><a href="javascript:;">经典之作</a>>><a href="javascript:;"><%= result[0].title %></a></p> 
+		<p>你的到来，让我倍感荣幸！！！！</p>
+	 </footer>
+   </div>
+</header>
+<!-- 
+<div style="height:150px;width:1200px;margin:0 auto;">
+ <img src="./img/tt.jpg" alt="我的图片" style="width:1200px;height:150px"/>
+</div> -->
+<script type="text/javascript">
+	
+   $(document).ready(function(){
+
+		  if($(document).width()>786){
+
+			  $("#main .main_left").css('width','895px');  
+			  $(".phone_img").css('display','none');
+			
+		  }else{
+
+	   	  $("#main .main_left").css('width','min-width:100px'); 
+		  $(".hidden").css('display','none');
+		  $(".img").css('display','none');
+		  $("#main .main_left").css('min-width','95px');
+		  }
+		
+
+		});
+	
+ 
+</script> 
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<!-- 内容部分 -->
+<div id="main">
+<!--   <div class="main_top"> </div> -->
+  <div class="main_left">
+    <div class="content">
+
+	  <p class="new_title" id="new_title"><%=result[0].title%></p>
+	  
+	  <table>
+	    <tr height="40" style="text-align:center;">
+		  <td class="hidden"><span class="iconfont">&#xe613;</span>所属栏目:<a href=""><span class="">
+		  	<%= result[0].alltype %>
+		  </span></a> </td>
+		  <td><span class="iconfont">&#xe630;</span>作者:<a href="./me.html"><%=result[0].author %></a></td>
+		  <td class="hidden"><span class="iconfont">&#xe641;</span>发表日期:<a href="javascript:;">
+		  	<%= result[0].datetime%>
+		  </a></td>
+		  <td id="looker_one">
+
+		  点击量:<%= result[0].looker%> 
+		<!-- 	<span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv"></span>次
+			</span> -->
+
+		  </td>
+		</tr>
+	  </table> 
+  	   
+	  <div class="article" id="article">
+	 <!--   <p id="one_one">
+	   
+		
+		</p>  
+		<div id="one_two" style="border:1px solid red;">
+			
+		</div> -->
+	   <!--  <div class="img">
+		  <img src="./img/textbg.jpg" alt="图片" class="img_computer"/>
+		</div>
+		 -->
+		<!-- <div class="phone_img" style="margin:0 auto;">
+		  <img src="./img/bg.jpg" alt="图片" class="img_phone"/>
+		</div> 
+	  -->
+	  
+	  </div>
+	   <script type="text/javascript">
+
+	     var texts=$("#new_title").html();
+                    
+	     $.get("/onearticle?title="+texts,function(result){
+	           
+               $("#article").html( result[0].content);
+	     });
+
+
+	    </script>
+	   <div style="height:20px;"></div>
+	  <div class="text_page">
+	     <p>
+	         <span class="page_new">上一篇:</span>
+	         <span id="top_a"><a href="JavaScript:;">没有你的！不行！！！</a> </span>
+	     </p>
+	     <p>
+	         <span class="page_new">下一篇:</span>
+	         <span id="next_a"> <a href="JavaScript:;">没有你的爱！！不行！！！</a></span>
+	     </p>
+	  </div>
+      
+    
+  
+
+	    <div style="height:20px;"></div>
+	  <div class="public">
+		<!-- 多说评论框 start -->
+			<div class="ds-thread" data-thread-key="" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+		var duoshuoQuery = {short_name:"sqk"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+			</script>
+		<!-- 多说公共JS代码 end -->
+			
+	  </div>
+	  
+	  
+
+	  
+	 
+	  
+	</div>
+  </div>
+  <div class="main_right">
+
+    <div class="main_me">
+	 <div class="me">
+       <a href="javascript:;"><span>WELCOME</span></a>
+    </div>
+    <table>
+       <tr height="30px">
+       <td><a href="http://t.qq.com/sqk666888">关注我</a></td>
+       <td><a href="/me?type=个人信息">关于我</a></td>
+     </tr>
+       <tr height="30px">
+        <td><a href="/message?type=留言板">留言板</a></td>
+        <td id="friend_b" style="cursor:pointer;"><a  id="friend_a">加好友</a></td>
+     </tr>
+    </table>
+ <img src="/img/qunma.png" id="xian" style="height:150px;width:150px; position:relative;left:-10px;top:-40px;z-index:5000;display:none;" alt="图片"/>
+	</div>   
+ <script type="text/javascript">
+     
+    $("#friend_b").hover(function(){
+            $("#xian").show(500);   
+        },function(){
+           $("#xian").fadeOut(500);
+
+           }
+
+    );
+
+    
+  </script>
+
+	<div class="main_right_bottom">
+	    <table>
+		  <tr height="20" id="com">
+		    <td class="table_c"><span class="txuan t_one" id="0">最新文章</span></td>
+		    <td class="table_c"><span class="" id="1">文章推荐</span></td>
+		    <td class="table_c"><span class="" id="2">代码技巧</span></td>
+		  </tr>
+		</table>
+
+
+		<div class="page">
+			<div class="main_tab one" id="main_tab"> </div>
+	       
+	          <script type="text/template" id="moban">
+	            <a href="/text?title={{=title }}">
+				  <div class="tab_page">
+				    <div class="tab_img"> 
+					   <img src="./img/{{=tupian.tupian.name }}" alt="胸怀的伟大"/>
+					</div>
+				    <div class="tab_new"> 
+	                   <h3 style="white-space:nowrap;overflow:hidden;width:100px;text-overflow: ellipsis;" >{{=alltype }}</h3> 
+					   <p> {{= describe }} </p>
+					   <time class="time">time:<i>{{=datetime }}</i> </time>
+					</div>
+				  </div> 
+				 </a>  
+	           </script>     
+		
+		
+
+	 
+
+			<div class="main_tab" id="main_tab_a">
+<!-- 
+			  <div class="tab_page">
+			    <div class="tab_img"> 
+				   <img src="./img/14.jpg" alt="胸怀的伟大"/>
+				</div>
+			    <div class="tab_new"> 
+                   <h3>人生感悟</h3> 
+				   <p>不要放弃，继续坚持,因为前面就是终点！所以你需要</p>
+				   <time class="time">time:<i>2012-12-22</i> </time>
+				</div>
+			  
+			  </div> -->
+		  
+			</div>
+
+			<div class="main_tab" id="main_tab_b"></div>
+
+			<script type="text/javascript">
+         $("#top_a").html("");
+         $("#next_a").html("");
+         var compiled = _.template($("#moban").html());
+      
+          var abc;
+          $.get("/allarticle",function(result){      
+                 var texta=$("#new_title").html();
+                 
+                   for(var i=0;i<result.length;i++){
+
+                 if(result[i].title==texta){
+                       abc=i;
+                 if(i==0){
+                 $("#top_a").html("没有了！！！");
+                  }else{
+                    $("#top_a").html("<a href='/text?title="+result[i-1].title+"' >"+result[i-1].title+"</a>");
+                        }
+                   }
+                   }
+                 // alert(abc);
+                  // alert(result.length);
+               if((abc+1)==result.length){
+                   $("#next_a").html("没有了！！！");
+                  }else{
+               $("#next_a").html("<a href='/text?title="+result[abc+1].title+"'>"+result[abc+1].title+"</a>");
+                  }
+
+
+                  for(var b=0;b<result.length;b++){
+            
+                          if(b==3){
+                       
+                                 var e=0;
+			                    for(var q=0;q<result.length;q++){
+			                     
+			                          if(result[q].good=="文章推荐"){
+			                            	
+			                                e=e+1;
+			                               if(e==4){
+
+								                   var u=0;
+								                    for(var er=0;er<result.length;er++){
+								                    	
+								                        
+								                          if(result[er].skills=="代码技巧"){
+								                            	
+								                               u=u+1;
+								                               if(u==5){
+								                               	return;
+								                               }else{
+								                               //组装模板
+								                            var htmlstring=compiled(result[er]);
+								                              // 添加DOM
+								                            $("#main_tab_b").append($(htmlstring));
+
+								                               }                                   
+								                          }
+								                  }
+			                               	
+			                               }else{
+			                               //组装模板
+			                            var htmlstring=compiled(result[q]);
+			                              // 添加DOM
+			                            $("#main_tab_a").append($(htmlstring));
+
+			                               }                                   
+			                          }
+			                  }
+
+                          }else{
+                              //组装模板
+                          var htmlstring=compiled(result[b]);
+                         // 添加DOM
+                          $("#main_tab").append($(htmlstring));
+
+                          }
+
+                  };
+
+       
+
+             
+             });
+       </script>
+
+
+
+
+			
+
+
+	    </div>
+	</div> 
+
+
+	<script type="text/javascript">
+	
+     $(".main_tab"+":not(:first)").hide();
+     $(".table_c span").mouseenter(function(){ 
+        num=$(this).attr("id");
+	   $(".main_tab").each(function(index){
+	   if(index==num){
+	        $(this).show();
+		    $(this).siblings().hide(); 
+		  } 
+	   })
+    });   
+	</script>
+	
+	
+  </div>
+</div>
+
+ <div style="height:20px;clear:both;"></div>
+<footer id="footer">
+   <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+</footer>
+
+
+
+
+<!-- 返回顶层 -->
+<div id="back-top">
+<a href=""><span><img src="./img/41.jpg" alt="top"/></span>返回到顶部</a>
+</div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+
+  $('#back-top').hide(); 
+   
+   $(function(){
+       $(window).scroll(function(){
+        if($(window).width()>768){
+	      if($(this).scrollTop()>100){
+		  $("#back-top").fadeIn(); 
+		  }else{ 
+		   $("#back-top").hide();
+		  }
+		  }else{
+		       $("#back-top").hide();
+		  }
+	   })
+   });
+   
+   $("back-top a").click(function(){
+     $("html,body").animate({scrollTop:0},800);
+	
+	  
+   });
+   
+ <!-- alert( $('#contenter').offset().top);   -->
+  <!-- alert( $('#contenter').offset().left);  -->
+ 
+
+  $('#contenter').click(function(){
+       $('html,body').animate({scrollTop:0}, 800);});
+});
+
+
+
+</script>
+
+</body>
+</html>

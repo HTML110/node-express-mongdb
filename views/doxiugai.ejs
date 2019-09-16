@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+        <style type="text/css">
+       
+
+       *{margin:0;padding:0;font-style:normal;}
+        a {color:#555; text-decoration:none; }
+        a:hover { text-decoration:none; }
+        img { border:none; }
+        ol,ul,li { list-style:none; } 
+     
+
+        nav{
+          width:100%;
+          height:45px;
+          background:   #BFEFFF;
+          padding-top: 10px;
+         position: fixed;
+        }
+         nav ul{
+          width:85%;
+          margin:0 auto;
+          height:45px;
+         
+        }
+         nav ul li{
+          float:left;
+          line-height:45px;
+        
+         
+        }
+        nav ul li:hover{
+         background: #B9D3EE;
+        font-weight: bold;
+        
+         
+        }
+         nav ul li a{
+          padding-left: 20px;
+          padding-right: 20px; 
+          text-align: center;
+          float:left;
+           color:     #4F4F4F;
+          line-height:45px;
+          font-size: 23px;
+          
+        }
+ 
+          form{
+            height:800px;
+            width:900px;
+            margin:0 auto;
+        }
+
+      form p{
+           line-height: 30px;
+        }
+          textarea{
+            width:800px;
+            height:200px;
+          }  
+
+#footer{
+  clear:both;
+  height:80px;
+  width:100%;
+    background-image:url(../img/bgmarker.png) repeat scroll 0 0;
+    background-color:#26272b;
+
+}
+#footer p{
+ text-align:center;
+ font-size:19px;
+ letter-spacing:1px;
+ line-height:60px;
+ color:white;
+ font-style:normal;
+  
+}
+
+  
+ </style>
+    </head>
+    <body>
+     <nav>
+      <ul>
+          <li> <a href="/xiugai"> 显示所有说说</a></li>
+          <li> <a href="/fabiao"> 发表说说</a></li>
+         
+      </ul>
+         
+    </nav>
+    <div style="height:60px;"></div>
+     <h1>修改《   <%= result[0].title %>  》的文章</h1>
+
+
+
+
+     <form action="/dodoxiugai?title=<%= result[0].title %>" method="post" enctype="multipart/form-data">
+       <p>
+          标题： <input type="text" name="title"  value="<%= result[0].title %>" />  
+
+       </p> 
+       <p>
+           作者： <input type="text" name="author" value="<%= result[0].author %>  " /> 
+
+       </p> 
+        <p>
+          分类： <input type="text" name="alltype" value="<%= result[0].alltype %>" /> 
+
+       </p> 
+     
+     
+
+        <p>
+
+        文章推荐： <!-- <input type="text" name="good" /> -->
+       <input type="radio"  name="good" value="文章推荐" <%if(result[0].good=="文章推荐" ){%> checked="checked" <%}%> />推荐
+       <input type="radio" name="good" value="no" <%if(result[0].good=="no" ){%> checked="checked" <%}%> />不推荐
+
+      <!--     文章推荐： <input type="text" name="good" value="<%= result[0].good %>" /> -->
+
+       </p> 
+
+        <p>
+          代码技巧： 
+           <input type="radio"  name="skills" value="文章推荐" <%if(result[0].skills=="代码技巧" ){%> checked="checked" <%}%> />推荐
+ <input type="radio" name="skills" value="no" <%if(result[0].skills=="no" ){%> checked="checked" <%}%> />不推荐
+
+       <!--    <input type="text" name="skills"  value="<%= result[0].skills %>" />  
+ -->
+       </p> 
+     
+          
+       <p>
+          浏览： <input type="text" name="looker" value="<%= result[0].looker %>"  />
+       </p> 
+          
+        <p>
+          品论： <input type="text" name="speaker" value="<%= result[0].speaker %>" />  
+       </p> 
+       
+          
+       
+       <p>
+        描述：<textarea cols="" rows="" name="describe"><%= result[0].describe %> </textarea>
+
+       </p> 
+       <p>
+       
+           内容：<textarea cols="" rows="" name="content"><%= result[0].content %> </textarea>
+       </p>
+       <p>
+           <input type="submit" value="提交" style="width:100px;font-size:20px;color:red;" />
+       </p>
+          
+     </form>
+
+
+       <footer id="footer">
+         <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+      </footer>
+    </body>
+</html>
+          

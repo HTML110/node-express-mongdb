@@ -1,0 +1,136 @@
+  <div class="main_me">
+    <div class="me">
+       <a href="javascript:;"><span>WELCOME</span></a>
+    </div>
+    <table>
+       <tr height="30px">
+       <td><a href="http://t.qq.com/sqk666888">关注我</a></td>
+       <td><a href="/me?type=个人信息">关于我</a></td>
+     </tr>
+       <tr height="30px">
+        <td><a href="/message?type=留言板">留言板</a></td>
+        <td id="friend_b" style="cursor:pointer;"><a  id="friend_a">加好友</a></td>
+     </tr>
+    </table>
+ <img src="/img/qunma.png" id="xian" style="height:150px;width:150px; position:relative;left:-10px;top:-40px;z-index:5000;display:none;" alt="图片"/>
+
+  </div> 
+ 
+ 
+  <script type="text/javascript">
+     
+    $("#friend_b").hover(function(){
+            $("#xian").show(500);   
+        },function(){
+           $("#xian").fadeOut(500);
+
+           }
+
+    );
+
+    
+  </script>
+
+
+    <div class="main_right_bottom">
+        <table>
+          <tr height="20" id="com">
+            <td class="table_c"><span class="txuan t_one" id="0">最新文章</span></td>
+            <td class="table_c"><span class="" id="1">文章推荐</span></td>
+            <td class="table_c"><span class="" id="2">代码技巧</span></td>
+          </tr>
+        </table>
+        <div class="page">
+            <div class="main_tab one" id="main_tab_a">   
+
+             <% for(var i=0;i<=3;i++){ %>
+                   <a href="/text?title=<%= result[i].title %>">
+                         <div class="tab_page">
+                            <div class="tab_img"> 
+                               <img src="./img/<%=result[i].tupian.tupian.name %>" alt="胸怀的伟大"/>
+                            </div>
+                            <div class="tab_new"> 
+                               <h3 style="white-space:nowrap;overflow:hidden;width:100px;text-overflow: ellipsis;" ><%=result[i].title %></h3> 
+                               <p> <%=result[i].describe%> </p>
+                               <time class="time">time:<i>  <%=result[i].datetime%> </i> </time>
+                            </div>
+                          </div> 
+                      </a>    
+               <% }%>           
+
+
+            </div>
+    
+        
+            <div class="main_tab" id="main_tab_b">  
+
+        
+            <% 
+                     var num=0;
+                for(var i=0;i<result.length;i++){ 
+                         
+                   if( result[i].good == "文章推荐"){ 
+                          num=num+1;
+                       if(num<5){
+
+             %>
+                        <a href="/text?title=<%= result[i].title %>"> 
+                         <div class="tab_page">
+                            <div class="tab_img"> 
+                               <img src="./img/<%=result[i].tupian.tupian.name %>" alt="胸怀的伟大"/>
+                            </div>
+                            <div class="tab_new"> 
+                               <h3 style="white-space:nowrap;  overflow:hidden;"><%=result[i].title %></h3> 
+                               <p> <%=result[i].describe%> </p>
+                               <time class="time">time:<i> <%=result[i].datetime%>  </i> </time>
+                            </div>
+                          </div> 
+                          </a>
+                <%  
+
+                       }
+                      }
+                     }
+
+                %>    
+     
+            
+         </div>
+            
+            <div class="main_tab">
+          
+             <%  
+                     var sum=0;
+                  for(var i=0;i<result.length;i++){  
+
+                      if(result[i].skills=="代码技巧") {
+                         sum=sum+1;
+                         if(sum<5){
+              
+              %>
+              
+             <a href="/text?title=<%=result[i].title %>">
+               <div class="tab_page">
+                <div class="tab_img"> 
+                   <img src="./img/<%=result[i].tupian.tupian.name %>" alt="胸怀的伟大"/>
+                </div>
+                <div class="tab_new"> 
+                   <h3 style="white-space:nowrap;overflow:hidden;width:100px;text-overflow: ellipsis;"> <%=result[i].title %> </h3> 
+                   <p>  <%= result[i].describe %></p>
+                   <time class="time">time:<i> <%= result[i].datetime%> </i> </time>
+                </div>
+              </div>
+              </a>
+              <%  
+                   }
+                      
+                   }
+                 } 
+
+              %>
+
+
+              
+            </div>
+        </div>
+    </div> 

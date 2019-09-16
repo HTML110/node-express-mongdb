@@ -1,0 +1,140 @@
+#main .main_left .left_tab{
+    /* height:170px; */
+	/* min-height:210px; */
+
+	 box-sizing:border-box;
+	padding-top:0.5em;
+	padding-bottom:1em;
+	padding-right:7px;
+    width:100%;
+	transition:all .8s 0s linear;
+    -mo-transition:all .8s 0s linear;
+    -o-transition:all .8s 0s linear;
+    -webkit-transition:all .8s 0s linear;
+    /* border:1px solid red;	 */
+	box-shadow:2px 2px 2px #D1EEEE;
+	
+}
+#main .main_left .left_tab:hover{
+	/* background-color: 	#B0E2FF; */
+	 /* background-color: 	#A4D3EE;   */
+	 background-color: 	#D1E9E9;   
+	 color: #7A7A7A;
+}
+#main .main_left .left_tab:not(.one){
+    /* margin-top:1em;  */
+}
+
+#main .main_left .left_tab .ht{
+  font-size:2em;
+  font-weight:bold;
+  font-family:'宋体';
+ 
+
+/* transition:all 1s 0s linear;
+-mo-transition:all 1s 0s linear;
+-o-transition:all 1s 0s linear;
+-webkit-transition:all 1s 0s linear; */
+  /* display:block; */
+}
+/* #main .main_left .left_tab:hover #ht{
+	padding-left:130px;
+} */
+
+
+#main .main_left .left_tab  table td{
+/* width:200px; */
+padding-right:8px;
+text-align:center;
+font-style:normal;
+ 
+}
+/* #main .main_left .left_tab  table span{
+} */
+#main .main_left .left_tab  table a{
+  padding-left:8px;
+}
+#main .main_left .left_tab .left_o{
+	letter-spacing:0.5px;
+	text-indent:20px;
+	font-family:'宋体';
+    font-style:normal;
+	line-height:22px;
+    font-size:1.1em;
+	min-height:80px;
+    cursor:hand;
+	
+}
+
+#main .main_left .left_tab .left_o .phone_span img{
+	
+	width:80px;
+	height:80px;
+	float:left;
+	padding-right:5px;
+}
+
+
+#main .main_left .left_tab .left_t{
+
+ font-size:1.1em;
+  background-color:#F4F4F4;
+  border-radius:5px;
+  width:100px;
+  line-height:30px;
+  text-align:center;
+  box-shadow:1.5px 1.5px 1.5px black;  
+  display:block;
+  font-weight:bold;
+  margin-left:68%;
+  cursor:pointer;
+	
+}
+#main .main_left .top_page{
+	height:50px; 
+	width:100%;
+	margin-top:10px;
+	margin-bottom:7px;
+	font-style:normal;
+	border-top-width:5px;
+	border-top-color: #63B8FF;
+	/* border:1px solid red; */
+}
+#main .main_left .top_page table {
+	float:right;
+}
+#main .main_left .top_page table .table_s{
+	display:none;
+}
+#main .main_left .top_page table span{
+	 padding:2px 1px 0px 1px;  
+	box-shadow:1px 1px 1px #1C86EE;
+	border-radius:5px;
+	width:40px;
+	font-size:1em;
+	display:block;
+	text-align:center;
+	margin-left:3px;
+	font-weight:bold;
+	background-color:#E5E5E5;
+	transition:all 1s;
+	-o-transition:all .5s;
+	-mo-transition:all .5s;
+	-webkit-transition:all .5s;
+}
+#main .main_left .top_page table span:hover{
+	 background-color:#CAE1FF; 
+	 color:white;
+	text-decoration:none;
+}
+#main .main_left .top_page table a{
+	text-decoration:none;
+}
+
+
+/* 对于留言板额外加入的， */
+
+#extry{
+	display:none;
+	
+}

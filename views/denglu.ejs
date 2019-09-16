@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<style type="text/css">
+  *{
+     margin:0;
+	 padding:0;
+  }
+   body{
+  
+     background-image:url(../img/04.gif); 
+   }
+   #one{
+   width:480px;
+   height:230px;
+  border-radius:50px;
+  position: absolute; 
+ left: 50%;
+ top: 50%;  
+ margin:-150px 0 0 -240px;
+ background-color: 	#CFCFCF;
+ opacity:0.9;
+     
+   }
+#one_a{
+     float:left;
+   }
+#one_a img{
+   width:120px;
+   height:230px;
+   border-radius:50%;
+}
+#one_b{
+     float:left;
+	  margin-top:30px;
+   }
+   #one_b table{
+     border-radius:15px 15px;
+   }
+   
+ table tr {
+  height:54px;
+ }  
+  table tr td{
+   font-size:20px;
+   color:#8B3A3A;
+ }  
+   table tr td input{
+  width:200px;
+  height:28px;
+  border-radius:5px;
+ }  
+  table tr td .two{
+    width:80px;
+	color: 	#666666;
+	height:32px;
+	font-size:19px;
+	cursor:pointer;
+	text-shadow:1px 1px 1px #C2C2C2;
+  }
+  #three{
+    height:200px;
+	line-height:200px;
+    width:400px;
+     text-shadow:2px 2px 2px  	#7CFC00;
+	font-size:40px;
+	margin:0 auto;
+  }
+</style>
+<title>后台管理</title>
+
+</head>
+<body>
+<div id="three">
+  孙全科后台登录管理
+</div>
+<div id="one">
+ <div id="one_a">
+    <img src="../img/1.jpg" alt="logo"/>
+ </div>
+ <div id="one_b">
+ <form action="/dodenglu" method="post" enctype="multipart/form-data">
+     <table width="350" bgcolor=" 	#BFBFBF" style="border-color" >
+        <tr align=center>
+            <td>用户名</td>
+            <td><input type="text" name="username" value="sun" id="username" /></td>
+        </tr>
+        <tr align=center>
+            <td>密 码</td>
+        	  <td><input type="password" name="password" id="password" value="12456" /></td>
+        </tr>
+
+        <tr align=center>
+           <td colspan="2">
+               <input type="submit" value="登录" class="two"/>    
+        	     <input type="reset" value="重置" class="two"/>
+           </td>
+        </tr>
+
+    </table>
+</form>
+ 
+ </div>
+
+
+</div>
+
+</body>
+</html>

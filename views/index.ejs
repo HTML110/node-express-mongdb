@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人博客</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<!-- <script type="text/javascript" src="./js/device.min.js"></script> -->
+	<script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+	  <script src="/js/underscore-noflect.js"></script>
+	<link type="text/css" rel="stylesheet" href="./css/public_computer.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/index.css" media="(min-width:786px)" />
+	<link type="text/css" rel="stylesheet" href="./css/animate.css"  />
+	<link type="text/css" rel="stylesheet" href="./css/public_phone.css"  media="(max-width:785.999px)" />
+	<link type="text/css" rel="stylesheet" href="./css/phone.css" media="(max-width:785.999px)" />
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+	 <!--    if(device.mobile()){} -->
+   $(document).ready(function(){
+/*       var leng=$(".main_left .left_o .phone_get").text();
+	     var sun=leng.substring(0,73)+'······';
+	     var computer=leng.substring(0,188)+'······'; */
+     
+         var p_length=$(".main_left .left_o .phone_get").length;
+		$(".main_left .left_o .phone_get").each(function(){    
+		
+		 var leng=$(this).text();
+	     var sun=leng.substring(0,73)+'······';
+	     var computer=leng.substring(0,188)+'······';
+		  if($(document).width()>786){
+		     $(this).text(computer);
+		  }else{
+		     $(this).text(sun);
+		     $(".phone_span").css('display','block');
+	         $(".iconfont").css('display','none');
+		  
+		  }
+		
+		
+		
+		});
+	
+     });
+</script> 
+
+<header id="header">
+
+   <div class="top">
+       <% include header.ejs %>
+   </div>
+</header>
+<div id="main"> 
+<!--   <div class="main_top"> </div> -->
+ <div class="main_left" style="">
+ <div id="main_left" style="min-height:1070px;"></div>
+
+ <!-- <div style="height:50px;"></div>  -->
+ 
+
+<script type="text/template" id="moban">
+	    <div class="left_tab">
+	    <span id="ht" class="ht"><i>  {{= title  }}  <i></span>
+		<p class=""></p>
+	    <table>
+		 <tr height="30" valign="middle">
+		    <td class="phone_none"><span class="iconfont">&#xe630;</span><span>作者:</span><a href="./me.html">  {{= author }} </a></td>
+		    <td><span class="iconfont">&#xe613;</span><span>分类:</span><a href="javascript:;"> {{=alltype }}</a></td>
+		    <td><span class="iconfont">&#xe690;</span><span>浏览:</span><a href="javascript:;">{{=looker }}</a></td>
+		    <td><span class="iconfont">&#x3438;</span><span>评论:</span><a href="/message?type=留言板"> {{=speaker}} </a></td>
+		 </tr> 
+		</table>
+		
+		<p class="left_o" id="left_o" >   
+            <span style="display:none;" class="phone_span">
+			<img src="./img/{{= tupian.tupian.name }}" alt="图片" />
+			</span>		
+		    <span class="phone_get" id="phone_get">
+			   {{= describe}}
+			</span>
+	 </p>
+		<p><a href="/text?title={{=title}}" ><span class="left_t">阅读全文</span></p></a>
+	
+	</div>
+
+
+</script>
+
+
+
+
+
+
+
+   <script type="text/javascript">
+      
+     // console.log($("#phone_get").html()) ;
+
+
+
+
+       //得到模板函数
+       var compiled = _.template($("#moban").html());
+        getpage(0);
+
+         function getpage(page){
+         $("#main_left").html("");	
+       
+         $.ajax({
+              "url":"/article?page="+page,
+              "type":"get",
+              "success":function (result){
+
+                     iterator(0);
+                     function iterator(i){
+                          if(i==result.length){
+                            //ajax请求完毕
+                          	return;
+                          }
+                         //组装模板
+                          var htmlstring=compiled(result[i]);
+                         // 添加DOM
+                          $("#main_left").append($(htmlstring));
+                               iterator(i + 1);
+                     }
+
+              }});
+
+     };
+
+       
+   </script>
+
+
+
+	<div style="height:15px;"></div>
+    <hr>
+	<!-- 分页代码 -->
+	<div class="top_page">
+	   <table>
+	     <tr height="40" id="page_a">
+	        
+		
+		 </tr>
+	   </table>
+	</div>
+	   <style type="text/css">
+     .active{
+     	position: relative;
+     	background: #BFEFFF;
+     	z-index: 2;
+     	border-radius: 25%;
+     	padding-right: 2px;
+     	height:25px;
+     	width:100%;
+     	line-height: 25px;
+         
+     } 
+
+   </style>
+
+   
+  <script type="text/javascript">
+       
+     $.get("/getsum",function(result){
+           var sum=parseInt(result);
+           //总页数
+           pagemount=Math.ceil(sum/6);
+
+             for(var i=0;i<pagemount;i++){
+             	
+             	$("#page_a").append("<td><a href='javascript:;'><span>" + i + "</span></a></td>");
+              };
+
+             $("#page_a td:first").addClass("active");
+            //监听
+            $("#page_a td").click(function () {
+                var page = $(this).index();
+                   getpage(page);
+                 // getPage(page);
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+           	  
+         });
+    
+  </script>
+
+	<hr>
+  
+  </div>
+  <div class="main_right" >
+     
+
+ <% include left.ejs %>
+
+	<script type="text/javascript">
+	
+     $(".main_tab"+":not(:first)").hide();
+     $(".table_c span").mouseenter(function(){ 
+        num=$(this).attr("id");
+	   $(".main_tab").each(function(index){
+	   if(index==num){
+	        $(this).show();
+		    $(this).siblings().hide(); 
+		  } 
+	   })
+    });   
+	</script>
+	
+	
+  </div>
+</div>
+
+ <div style="height:20px;clear:both;"></div>
+<footer id="footer">
+   <p> Copyright ©2016 [孙全科的博客] Powered By [博客] Version 2.0.0  </p>
+</footer>
+
+
+
+
+<!-- 返回顶层 -->
+<div id="back-top">
+<a href=""><span><img src="./img/41.jpg" alt="top"/></span>返回到顶部</a>
+</div>
+
+<script type="text/javascript">
+$("document").ready(function(){
+
+  $('#back-top').hide(); 
+   
+   $(function(){
+       $(window).scroll(function(){
+        if($(window).width()>768){
+	      if($(this).scrollTop()>100){
+		  $("#back-top").fadeIn(); 
+		  }else{ 
+		   $("#back-top").hide();
+		  }
+		  }else{
+		       $("#back-top").hide();
+			     $(".phone_span").css('display','block');
+			   
+		  }
+		  
+		  
+	   })
+   });
+   
+   $("back-top a").click(function(){
+     $("html,body").animate({scrollTop:0},800);
+	
+	  
+   });
+   
+ <!-- alert( $('#contenter').offset().top);   -->
+  <!-- alert( $('#contenter').offset().left);  -->
+ 
+
+  $('#contenter').click(function(){
+       $('html,body').animate({scrollTop:0}, 800);});
+});
+
+
+
+</script>
+
+</body>
+</html>
